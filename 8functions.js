@@ -43,9 +43,22 @@ function darkMode() {
  }
 //end of nightmodez
 
-function cartBadge1() {
-    var badge = document.getElementById("cartBadge").value;
+//start of cartBadge
+let cartBadgeIcon = 0;
 
-    badge1++;
-    document.getElementById("cartBadge").value;
+function cartBadge1() {
+    cartBadgeIcon++;
+    document.getElementById("cartBadgeIcon").innerHTML = cartBadgeIcon;
+
+    totalPrice += 600;
+    
+
 }
+
+function resetCart() {
+    cartBadgeIcon = 0;
+    document.getElementById("cartBadgeIcon").innerHTML = cartBadgeIcon;
+}
+
+let totalPrice = 600;
+//end of cartBadge
