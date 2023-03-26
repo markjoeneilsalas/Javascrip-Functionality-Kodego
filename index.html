@@ -8,23 +8,8 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
   <script src="8functions.js"></script>
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <style>
-    #card-body {
-        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    }
-
-    .dark-mode {
-        background-color: black;
-        color: white;
-    }
-
-    .white-mode {
-        background-color: rgb(255, 255, 255);
-        color: black;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -95,11 +80,11 @@
   </div>
 
   <div id="card-body" class="col row-gap-3 column-gap-3 m-3">
-    <img class="card-img-top pt-3" src="https://img.freepik.com/premium-vector/calculator-with-modern-flat-style_3322-74.jpg?w=2000" alt="">
+    <img class="card-img-top pt-3" src="https://cdn-icons-png.flaticon.com/512/1413/1413908.png" alt="">
 <div class="card-body text-center">
-        <h4 class="card-title">Calculator</h4>
+        <h4 class="card-title">Shopping Cart</h4>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
-              Launch Calculator
+              Launch Shopping Cart
           </button>
         
   <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -115,29 +100,37 @@
                     <div class="container">
                         <div class="row">
                             <div class="h1">
-                                <i class="bi bi-cart-fill"><span id="cartBadge" class="bg-danger badge badge-secondary"></span></i>
+                                <i class="bi bi-cart-fill"><span id="cartBadgeIcon" class="bg-danger badge badge-secondary"></span></i>
                             </div>
                             <div class="card col" style="width: 18rem;">
                                 <img class="card-img-top" src="https://yummyfood.ph/wp-content/uploads/2021/09/pork-sisig-recipe.jpg" alt="Card image cap">
                                 <div class="card-body">
-                                  <h5 class="card-title">SISIG</h5>
+                                  <h5 class="card-title">Product1</h5>
                                   <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, eaque?</p>
-                                  <a href="#" class="btn btn-primary" onclick="cartBadge2()">add to cart</a>
+                                  <a href="#" class="btn btn-primary" onclick="cartBadge1()">add to cart</a>
+                                  <a href="#" class="btn btn-primary" onclick="resetCart()">Clear Cart</a>
                                 </div>
+                                <h3 id="product1">Php 300</h3>
                               </div>
                               <div class="card col" style="width: 18rem;">
                                 <img class="card-img-top" src="https://yummyfood.ph/wp-content/uploads/2021/09/pork-sisig-recipe.jpg" alt="Card image cap">
                                 <div class="card-body">
-                                  <h5 class="card-title">SISIG</h5>
+                                  <h5 class="card-title">Product2</h5>
                                   <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, eaque?</p>
-                                  <a href="#" class="btn btn-primary" onclick="cartBadge1()">add to cart</a>
+                                  <a href="#" class="btn btn-primary" onclick="cartBadge1()">Add to cart</a>
+                                  <br>
+                                  <a href="#" class="btn btn-primary" onclick="resetCart()">Clear Cart</a>
                                 </div>
+                                <h3 id="product1">Php 300</h3>
+                                <br>
                               </div>
                               <div>
                                 <div>
-                                    <div></div>
+                                    <div>
+                                        <h3>TOTAL PRICE</h3>
+                                    </div>
                                     <hr>
-                                    <div></div>
+                                    PHP:<div id="totalPrice">600</div>
                                 </div>
                               </div>
                         </div>
@@ -153,12 +146,12 @@
 <div id="card-body" class="col row-gap-3 pl-2 pr-2 m-3">
     <img class="card-img-top pt-3" src="https://img.freepik.com/premium-vector/calculator-with-modern-flat-style_3322-74.jpg?w=2000" alt="">
 <div class="card-body text-center">
-        <h4 class="card-title">Calculator</h4>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-              Launch Calculator
+        <h4 class="card-title">QR Code Scanner</h4>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4">
+              Launch QR Code Scanner
           </button>
         
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
@@ -167,42 +160,14 @@
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
-                  <div class="modal-body">
-                      <label for="">INPUT NUMBER1</label>
-                      <input id="input1" type="text">
-                      <br>
-                      <label for="">INPUT NUMBER2</label>
-                      <input id="input2" type="text">
-                      <br>
-                      <button id="btnInput" onclick="add()" class="text-center" type="button">ADD</button>
-                      <button id="btnInput" onclick="minus()" class="text-center" type="button">MINUS</button>
-                      <button id="btnInput" onclick="times()" class="text-center" type="button">TIMES</button>
-                      <button id="btnInput" onclick="divide()" class="text-center" type="button">DIVIDE</button>
-                  </div>
-
-                  <br>
-
-                  <div>
-                      SUM:<h3 class="result" id="Result">VALUE</h3>
-                  </div>
+              <div class="container">
               </div>
           </div>
       </div>
   </div>
 </div>
-
-    </div>
+</div>
 </div>
 </section>
-<script>
-    $(function(){
-$('#myModal').modal({
-   show:true,
-   backdrop:'static'
-});
- //now on button click
-  $('#myModal').modal('show');
-});
-</script>
 </body>
 </html>
