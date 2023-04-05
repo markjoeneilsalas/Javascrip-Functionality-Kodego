@@ -1,5 +1,4 @@
 
-//start of calculator
 
 function add(){
     var var1 = document.getElementById("input1").value;
@@ -29,9 +28,8 @@ function divide(){
     document.getElementById("Result").innerHTML = var1 / var2;
 }
 
-//end of calculator
 
-//start of nightmodez
+
 function darkMode() {
     var element = document.body;
     element.classList.toggle("dark-mode");
@@ -41,9 +39,9 @@ function darkMode() {
     var element = document.body;
     element.classList.toggle("white-mode");
  }
-//end of nightmodez
 
-//start of cartBadge
+
+
 let cartBadgeIcon = 0;
 
 function cartBadge1() {
@@ -56,7 +54,6 @@ function resetCart() {
     document.getElementById("cartBadgeIcon").innerHTML = cartBadgeIcon;
 }
 
-//end of cartBadge
 const api = {
     key: "2fa73590fd8b5a4c6e68098ad5625395",
     base: "https://api.openweathermap.org/data/2.5/"
@@ -131,7 +128,6 @@ const api = {
     return `${day} ${date} ${month} ${year}`;
   }
 
-// tictactoe
 
 function age() {
     var d1 = document.getElementById("date").value;
@@ -157,35 +153,8 @@ function age() {
         "Your Age is " + y + " Years " + m + " Months " + d + " Days";
 }
 
-// tictactoe
+var msg1 = document.getElementById("message1"); var msg3 = document.getElementById("message2"); var msg3 = document.getElementById("message3"); var answer = Math.floor(Math.random() * 100) + 1
 
-var msg1 = document.getElementById("message1") var msg2 = document.getElementById("message2") var msg3 = document.getElementById("message3") var answer = Math.floor(Math.random() * 100) + 1;
-var no_of_guesses = 0;
-var guesses_num = [];
-
-function play() {
-    var user_guess = document.getElementById("guess").value;
-    if (user_guess < 1 || user_guess > 100) {
-        alert("Please Enter a number Between 1 to 100");
-    } else {
-        guesses_num.push(user_guess);
-        no_of_guesses += 1;
-        if (user_guess < answer) {
-            msg1.textContent = "Your Guess is Too low"
-            msg2.textContent = "No. Of Guesses : " + no_of_guesses;
-            msg3.textContent = "Guessed Number Are: " + guesses_num;
-        } else if (user_guess > answer) {
-            msg1.textContent = "Your Guess is Too High"
-            msg2.textContent = "No. Of Guesses : " + no_of_guesses;
-            msg3.textContent = "Guessed Number Are: " + guesses_num;
-        } else if (user_guess == answer) {
-            msg1.textContent = "Yahhhh You won It!!"
-            msg2.textContent = "the Number was " + answer msg3.textContent = " You guessd it in " + no_of_guesses + "Guesses";
-        }
-    }
-}
-
-// random jokes
 const Quote = document.getElementById("quote");
 const Author = document.getElementById("author");
 function getQuote() {
